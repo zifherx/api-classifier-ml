@@ -1,0 +1,70 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "Fernando Rojas",
+        "version": "1.0.0",
+        "title": "Sexting Scan API",
+        "contact": {
+            "email": "frojasq@outlook.com"
+        },
+        "license": {
+            "name": "GPL",
+            "url": "https://opensource.org/licenses/GPL-3.0"
+        }
+    },
+    "servers": [{
+        "url": "/"
+    }],
+    "tags": [{
+        "name": "Clasificación de Sexting",
+        "description": "Clasificación del Sexting utilizando NLP"
+    }],
+    "paths": {
+        "/": {
+            "post": {
+                "tags": [
+                    "Clasificación de Sexting"
+                ],
+                "summary": "Retorna la clasificación de una frase",
+                "requestBody": {
+                    "description": "Ingresa una frase u oración para clasificar si es Sexting",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Sexting"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Sexting"
+                        }
+                    },
+                    "404": {
+                        "description": "No Encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Sexting": {
+                "type": "object",
+                "properties": {
+                    "oracion": {
+                        "type": "string",
+                        "format": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+flask==2.0.1
+flask_restful==0.3.9
+flask-swagger-ui==3.36.0
+huggingface-hub==0.0.8
+joblib==1.0.1
+numpy==1.20.3
+pillow==8.2.0
+scikit-learn==0.24.2
+torch==1.9.0
+torchvision==0.10.0
+transformers==4.7.0
